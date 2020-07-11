@@ -41,9 +41,15 @@ class GameController
             inputKey = ReadKey(true);
             if (inputKey.Key == ConsoleKey.D1)
             {
-                game = new GameRPS();
+                if (gameType[currentGameTypeIndex] == "RPS")
+                    game = new GameRPS();
+                else if (gameType[currentGameTypeIndex] == "MyNewGame")
+                    game = new GameMyGame();
+                else
+                    throw new ArgumentException("No such game");
                 game.Play();
                 gamesRecord += game.gamesRecord;
+
             }
             else if (inputKey.Key == ConsoleKey.D2)
             {
