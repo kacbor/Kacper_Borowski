@@ -3,7 +3,7 @@ using static System.Console;
 
 class GameController
 {
-    Game game;
+    GameRPS game;
     GamesRecord gamesRecord;
 
     public GameController()
@@ -35,13 +35,13 @@ class GameController
             inputKey = ReadKey(true);
             if (inputKey.Key == ConsoleKey.D1)
             {
-                game = new Game();
+                game = new GameRPS();
                 game.Play();
                 gamesRecord += game.gamesRecord;
             }
             else if (inputKey.Key == ConsoleKey.D2)
             {
-                game = new Game(true);
+                game = new GameRPS(true);
                 game.Play();
                 gamesRecord += game.gamesRecord;
             }
