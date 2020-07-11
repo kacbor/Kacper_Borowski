@@ -28,7 +28,7 @@ class Game
         string properInput;
 
         // Prompt for input
-        WriteLine("{0}, Choose:\n[1] Rock\n[2] Paper\n[3] Scissors", player.playerName);
+        WriteLine("{0}, Choose:\n[1] Rock\n[2] Paper\n[3] Scissors", player.PlayerName);
 
         // Get player input
         rawInput = ReadLine();
@@ -50,22 +50,22 @@ class Game
 
     public string DetermineWinner(Player playerOne, Player playerTwo)
     {
-        if (playerOne.lastInput == playerTwo.lastInput)
+        if (playerOne.LastInput == playerTwo.LastInput)
         {
             WriteLine("It's a draw!");
             return "Draw";
         }
-        else if ((playerOne.lastInput == "Rock" && playerTwo.lastInput == "Scissors") ||
-                (playerOne.lastInput == "Paper" && playerTwo.lastInput == "Rock") ||
-                (playerOne.lastInput == "Scissors" && playerTwo.lastInput == "Paper"))
+        else if ((playerOne.LastInput == "Rock" && playerTwo.LastInput == "Scissors") ||
+                (playerOne.LastInput == "Paper" && playerTwo.LastInput == "Rock") ||
+                (playerOne.LastInput == "Scissors" && playerTwo.LastInput == "Paper"))
         {
-            Console.WriteLine("{0} won!", playerOne.playerName);
-            return String.Format("{0} won!", playerOne.playerName);
+            Console.WriteLine("{0} won!", playerOne.PlayerName);
+            return String.Format("{0} won!", playerOne.PlayerName);
         }
         else
         {
-            Console.WriteLine("{0} won!", playerTwo.playerName);
-            return String.Format("{0} won!", playerTwo.playerName);
+            Console.WriteLine("{0} won!", playerTwo.PlayerName);
+            return String.Format("{0} won!", playerTwo.PlayerName);
         }
     }
 
@@ -90,7 +90,7 @@ class Game
         string gameResult = DetermineWinner(playerOne, playerTwo);
 
         // Add data to GamesRecord
-        gamesRecord.AddRecord(playerOne.lastInput, playerTwo.lastInput, gameResult);
+        gamesRecord.AddRecord(playerOne.LastInput, playerTwo.LastInput, gameResult);
 
         // Ask the players if they want to continue
         WriteLine("Do you want to play another round? [y]");

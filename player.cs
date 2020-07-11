@@ -3,23 +3,41 @@ using static System.Console;
 
 class Player
 {
-    public string playerName;
-    public string lastInput;
+    protected string playerName;
+    private string lastInput;
 
-    public Player()
+    public string PlayerName
     {
-        SetPlayerName();
+        get
+        {
+            return playerName;
+        }
+        set
+        {
+            playerName = value;
+        }
     }
+
+    public string LastInput { get => lastInput; set => lastInput = value; }
+
+    public Player(bool invokeNameInput = true)
+    {
+        if (invokeNameInput)
+        {
+            SetPlayerName();
+        }
+    }
+
 
     public Player(string playerName)
     {
-        this.playerName = playerName;
+        this.PlayerName = playerName;
     }
 
     public void SetPlayerName()
     {
         Write("Please enter player name: ");
-        playerName = ReadLine();
+        PlayerName = ReadLine();
     }
 
     virtual public void GetInput(Dictionary<string, string> inputTable)
@@ -28,7 +46,7 @@ class Player
         string rawInput;
 
         // Prompt for input
-        WriteLine("{0}, Choose:", playerName);
+        WriteLine("{0}, Choose:", PlayerName);
         foreach (KeyValuePair<string, string> entry in inputTable)
         {
             WriteLine("[{0}] {1}", entry.Key, entry.Value);
