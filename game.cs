@@ -11,5 +11,12 @@ namespace Kacper_Borowski
         public GamesRecord gamesRecord;
         public abstract void Play();
 
+        private static string gameName;
+        private static string gameRules;
+  
+  public string GameName { get => gameName; set => gameName = value; }
+        public string GameRules { get => gameRules; set => gameRules = value; }
+
+
     }
 }

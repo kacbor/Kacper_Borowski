@@ -9,6 +9,11 @@ class GameRPS : Game
 
     public GameRPS(bool singleplayer = false)
     {
+
+        GameName = "Rock-Paper-Scissors";
+        GameRules = "The rules are very simple - each player chooses Rock, Paper or Scissors choice by entering the choice's number\n[1] Rock\n[2] Paper\n[3] Scissors\nand confirm it by clicking Enter.\nAfter both player choose, the winner is determined. After each game the application will ask the players if they want to continue, and if the player repond with anything else than [y]es than the game finishes and presents the record of the last up to 10 games.\n\nHave fun!";
+
+
         inputTable = new Dictionary<string, string>()
   {
     {"1", "Rock"},
