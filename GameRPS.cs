@@ -96,7 +96,7 @@ class GameRPS : Game
         string gameResult = DetermineWinner(playerOne, playerTwo);
 
         // Add data to GamesRecord
-        gamesRecord.AddRecord(playerOne.LastInput, playerTwo.LastInput, gameResult);
+        gamesRecord.AddRecord(new RecordRPS(playerOne.LastInput, playerTwo.LastInput, gameResult));
 
         // Ask the players if they want to continue
         WriteLine("Do you want to play another round? [y]");
