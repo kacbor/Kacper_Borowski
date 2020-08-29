@@ -4,7 +4,7 @@ using static System.Console;
 
 class GameController
 {
-    string[] gameType = { "RPS", "???" };
+    string[] gameType = { "RPS", "MyNewGame" };
     int currentGameTypeIndex = 0;
 
 
@@ -45,6 +45,7 @@ class GameController
                     game = new GameRPS();
                 else if (gameType[currentGameTypeIndex] == "MyNewGame")
                     game = new GameMyGame();
+                
                 else
                     throw new ArgumentException("No such game");
                 game.Play();
